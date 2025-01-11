@@ -15,8 +15,8 @@ h1 {
 
 #game-container {
     display: grid;
-    grid-template-columns: repeat(20, 40px);
-    grid-template-rows: repeat(20, 40px);
+    grid-template-columns: repeat(20, 28px);
+    grid-template-rows: repeat(20, 28px);
     gap: 2px;
     justify-content: center;
     margin: 20px auto;
