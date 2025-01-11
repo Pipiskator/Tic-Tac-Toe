@@ -1,82 +1,42 @@
 body {
     font-family: Arial, sans-serif;
+    text-align: center;
     background-color: #f0f8ff;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
+    padding: 20px;
+    font-size: 5vmin;
 }
 
 h1 {
     color: #2c3e50;
-    font-size: 24px;
-    margin: 20px 0;
-}
-
-#info {
-    text-align: center;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-#turn-info {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #34495e;
-}
-
-#reset-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#reset-btn:hover {
-    background-color: #2980b9;
-}
-
-/* Контейнер для игрового поля */
-#game-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow-x: auto; /* Горизонтальная прокрутка */
-    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 3vmin; /* Размер шрифта пропорционален ширине экрана */
 }
 
 #game-container {
     display: grid;
-    grid-template-columns: repeat(20, 25px);
-    grid-template-rows: repeat(20, 25px);
+    grid-template-columns: repeat(20, 40px);
+    grid-template-rows: repeat(20, 40px);
     gap: 2px;
-    border: 2px solid #3498db;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    /* Контейнер сам по себе будет ограничен шириной */
+    justify-content: center;
+    margin: 20px auto;
 }
 
 .cell {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     border: 1px solid #ddd;
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     color: #34495e;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    min-width: 30px;  /* Устанавливаем минимальный размер */
+    min-height: 30px; /* Устанавливаем минимальный размер */
 }
 
 .cell:hover:not(.taken) {
@@ -94,44 +54,48 @@ h1 {
     font-weight: bold;
 }
 
-/* Адаптация для маленьких экранов */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
+#info {
+    margin-top: 20px;
+}
 
-    h1 {
-        font-size: 20px;
-    }
+#turn-info {
+    font-size: 3vmin;
+    margin-bottom: 10px;
+    color: #34495e;
+}
 
-    #info {
-        margin-bottom: 20px;
-    }
+#reset-btn {
+    padding: 1vmin 2vmin;
+    font-size: 3vmin;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-    #game-wrapper {
-        max-width: 100%;
-        padding: 5px;
-    }
+#reset-btn:hover {
+    background-color: #2980b9;
+}
 
+@media (max-width: 900px) {
     #game-container {
-        grid-template-columns: repeat(20, 20px);
-        grid-template-rows: repeat(20, 20px);
+        display: grid;
+        grid-template-columns: repeat(20, 1fr); /* Равномерное распределение столбцов */
+        grid-template-rows: repeat(20, 1fr);    /* Равномерное распределение строк */
         gap: 1px;
-        width: auto; /* ширина будет адаптироваться */
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .cell {
-        width: 20px;
-        height: 20px;
-        font-size: 12px;
-    }
-
-    #turn-info {
-        font-size: 16px;
-    }
-
-    #reset-btn {
-        padding: 8px 16px;
-        font-size: 14px;
+        width: 100%;  /* Ячейки будут занимать доступное пространство */
+        height: 100%; /* Ячейки будут занимать доступное пространство */
+        font-size: 3vmin; /* Размер шрифта пропорционален ширине экрана */
+        transition: background-color 0.2s ease;
+        min-width: 10px;  /* Устанавливаем минимальный размер */
+        min-height: 10px; /* Устанавливаем минимальный размер */
+        aspect-ratio: 1; /* Сохраняет квадратную форму ячейки */
     }
 }
