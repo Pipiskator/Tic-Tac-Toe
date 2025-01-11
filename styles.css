@@ -28,15 +28,13 @@ h1 {
     border: 1px solid #ddd;
     background-color: #fff;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;    /* Вертикальное выравнивание */
+    justify-content: center; /* Горизонтальное выравнивание */
     font-size: 20px;
     font-weight: bold;
     color: #34495e;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    min-width: 30px;  /* Устанавливаем минимальный размер */
-    min-height: 30px; /* Устанавливаем минимальный размер */
     aspect-ratio: 1; /* Сохраняет квадратную форму ячейки */
 }
 
@@ -95,8 +93,6 @@ h1 {
         height: 100%; /* Ячейки будут занимать доступное пространство */
         font-size: 3vmin; /* Размер шрифта пропорционален ширине экрана */
         transition: background-color 0.2s ease;
-        min-width: 10px;  /* Устанавливаем минимальный размер */
-        min-height: 10px; /* Устанавливаем минимальный размер */
         aspect-ratio: 1; /* Сохраняет квадратную форму ячейки */
     }
 }
